@@ -25,7 +25,7 @@
 
 @synthesize vehiclePhoto;
 
-
+@synthesize scanDevices, connectDevices;
 
 
 - (IBAction)vehicleSwitch: (id)sender {
@@ -42,6 +42,10 @@
     }
 
 }
+- (IBAction)scanDevices:(id)sender {
+}
+- (IBAction)connectDevices:(id)sender {
+}
 
 NSMutableArray *photos;
 
@@ -51,20 +55,50 @@ NSMutableArray *photos;
 	// Do any additional setup after loading the view, typically from a nib.
     UIImage *image = [UIImage imageNamed: @"bicycle.png"];
     [vehiclePhoto setImage:image];
+    
+    //Design Background
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
+    UIImage *bkgimage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bkgimage];
+
+    
     //Design Labels
-    self.rearPressure.layer.borderColor = [UIColor blueColor].CGColor;
-    self.rearPressure.layer.borderWidth = 1.0;
-    self.rearPressure.layer.cornerRadius = 8;
+    NSArray *labels = [NSArray arrayWithObjects:self.rearPressure, self.frontPressure, self.availableDevices, self.connectionStatus, nil];
+    for (UILabel *lbs in labels) {
+        lbs.layer.borderColor = [UIColor blueColor].CGColor;
+        lbs.layer.borderWidth = 1.0;
+        lbs.layer.cornerRadius = 6;
+        lbs.backgroundColor = [UIColor whiteColor];
+    }
+    //Design Buttons
+    NSArray *buttons = [NSArray arrayWithObjects:self.scanDevices, self.connectDevices, nil];
+    for (UIButton *btn in buttons){
+        // Set the button Text Color
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        
+        // Set the button Background Color
+        [btn setBackgroundColor:[UIColor blueColor]];
+        
+        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+        btnGradient.frame = btn.bounds;
+        btnGradient.colors = [NSArray arrayWithObjects:
+                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                              nil];
+        [btn.layer insertSublayer:btnGradient atIndex:0];
+        // Round button corners
+        CALayer *btnLayer = [btn layer];
+        [btnLayer setMasksToBounds:YES];
+        [btnLayer setCornerRadius:5.0f];
+        // Apply a 1 pixel, black border
+        [btnLayer setBorderWidth:1.0f];
+        [btnLayer setBorderColor:[[UIColor blackColor] CGColor]];
+    }
     
-    self.frontPressure.layer.borderColor = [UIColor blueColor].CGColor;
-    self.frontPressure.layer.borderWidth = 1.0;
-    self.frontPressure.layer.cornerRadius = 8;
-    
-    self.availableDevices.layer.borderColor = [UIColor blueColor].CGColor;
-    self.availableDevices.layer.borderWidth = 1.0;
-    
-    self.connectionStatus.layer.borderColor = [UIColor blueColor].CGColor;
-    self.connectionStatus.layer.borderWidth = 1.0;
 
 }
 
@@ -74,6 +108,4 @@ NSMutableArray *photos;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)vehiclePhoto:(UISegmentedControl *)sender {
-}
 @end

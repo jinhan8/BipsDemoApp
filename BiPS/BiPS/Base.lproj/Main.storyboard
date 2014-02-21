@@ -39,29 +39,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dR-Am-cum">
-                                <rect key="frame" x="99" y="465" width="117" height="33"/>
+                                <rect key="frame" x="102" y="486" width="117" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Connect!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="connectDevices:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9c5-P3-Zzx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-rb-gRC">
-                                <rect key="frame" x="95" y="369" width="130" height="33"/>
+                                <rect key="frame" x="95" y="375" width="130" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Scan for Devices">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="scanDevices:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kzt-Vu-FYv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-T1-NtY">
-                                <rect key="frame" x="20" y="506" width="280" height="21"/>
+                                <rect key="frame" x="20" y="527" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-c3-akY">
-                                <rect key="frame" x="20" y="410" width="280" height="62"/>
+                                <rect key="frame" x="20" y="416" width="280" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -95,9 +101,11 @@
                     </view>
                     <connections>
                         <outlet property="availableDevices" destination="sfS-c3-akY" id="uuK-xa-gLj"/>
+                        <outlet property="connectDevices" destination="6dR-Am-cum" id="jL1-3c-lxa"/>
                         <outlet property="connectionStatus" destination="WcA-T1-NtY" id="6I7-3i-dcB"/>
                         <outlet property="frontPressure" destination="PoV-j5-UvP" id="Ksl-qB-iJ9"/>
                         <outlet property="rearPressure" destination="MBq-6g-Lmf" id="hMO-hp-oKd"/>
+                        <outlet property="scanDevices" destination="hc4-rb-gRC" id="wsQ-A9-dXN"/>
                         <outlet property="vehiclePhoto" destination="Q1h-x3-HZV" id="ROO-XX-Lc6"/>
                         <outlet property="verhiclePhoto" destination="tz7-n1-d2b" id="x3W-1V-foB"/>
                     </connections>

@@ -11,6 +11,8 @@
 #import "Photo.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *scanDevices;
+@property (weak, nonatomic) IBOutlet UIButton *connectDevices;
 
 
 @property (nonatomic)IBOutlet UISegmentedControl *verhiclePhoto;
