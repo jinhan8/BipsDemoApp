@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *scanDevices;
 @property (weak, nonatomic) IBOutlet UIButton *connectDevices;
 
-
 @property (nonatomic)IBOutlet UISegmentedControl *verhiclePhoto;
 
 -(IBAction)vehicleSwitch:(id)sender;

@@ -56,6 +56,7 @@ NSMutableArray *photos;
     UIImage *image = [UIImage imageNamed: @"bicycle.png"];
     [vehiclePhoto setImage:image];
     
+   
     //Design Background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
@@ -63,7 +64,12 @@ NSMutableArray *photos;
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:bkgimage];
-
+    //Design Titles
+//    NSArray *titles = [NSArray arrayWithObjects:self.title, self.rearTitle, self.frontTitle, nil];
+//    for (UILabel *ttl in titles) {
+//        ttl.textColor = [UIColor whiteColor];
+//        ttl.font = [UIFont fontWithName:@"Helvetica-Bold" size:8.0];
+//    }
     
     //Design Labels
     NSArray *labels = [NSArray arrayWithObjects:self.rearPressure, self.frontPressure, self.availableDevices, self.connectionStatus, nil];
