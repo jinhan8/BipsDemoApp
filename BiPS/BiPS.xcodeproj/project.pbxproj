@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A526365018B6F6160023F472 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A526364F18B6F6160023F472 /* QuartzCore.framework */; };
 		A54780DF18B2648E0094C3BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54780DE18B2648E0094C3BB /* Foundation.framework */; };
 		A54780E118B2648E0094C3BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54780E018B2648E0094C3BB /* CoreGraphics.framework */; };
 		A54780E318B2648E0094C3BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54780E218B2648E0094C3BB /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A526364F18B6F6160023F472 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A54780DB18B2648E0094C3BB /* BiPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54780DE18B2648E0094C3BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A54780E018B2648E0094C3BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A526365018B6F6160023F472 /* QuartzCore.framework in Frameworks */,
 				A547811418B264FC0094C3BB /* CoreBluetooth.framework in Frameworks */,
 				A54780E118B2648E0094C3BB /* CoreGraphics.framework in Frameworks */,
 				A54780E318B2648E0094C3BB /* UIKit.framework in Frameworks */,
@@ -110,6 +113,7 @@
 		A54780DD18B2648E0094C3BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A526364F18B6F6160023F472 /* QuartzCore.framework */,
 				A547811318B264FC0094C3BB /* CoreBluetooth.framework */,
 				A54780DE18B2648E0094C3BB /* Foundation.framework */,
 				A54780E018B2648E0094C3BB /* CoreGraphics.framework */,
@@ -476,6 +480,7 @@
 				A547810F18B2648E0094C3BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A547811018B2648E0094C3BB /* Build configuration list for PBXNativeTarget "BiPSTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +489,7 @@
 				A547811218B2648E0094C3BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

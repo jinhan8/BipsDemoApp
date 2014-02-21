@@ -25,6 +25,9 @@
 
 @synthesize vehiclePhoto;
 
+
+
+
 - (IBAction)vehicleSwitch: (id)sender {
     
     UISegmentedControl *segmentControl = (UISegmentedControl *) sender;
@@ -48,7 +51,21 @@ NSMutableArray *photos;
 	// Do any additional setup after loading the view, typically from a nib.
     UIImage *image = [UIImage imageNamed: @"bicycle.png"];
     [vehiclePhoto setImage:image];
+    //Design Labels
+    self.rearPressure.layer.borderColor = [UIColor blueColor].CGColor;
+    self.rearPressure.layer.borderWidth = 1.0;
+    self.rearPressure.layer.cornerRadius = 8;
     
+    self.frontPressure.layer.borderColor = [UIColor blueColor].CGColor;
+    self.frontPressure.layer.borderWidth = 1.0;
+    self.frontPressure.layer.cornerRadius = 8;
+    
+    self.availableDevices.layer.borderColor = [UIColor blueColor].CGColor;
+    self.availableDevices.layer.borderWidth = 1.0;
+    
+    self.connectionStatus.layer.borderColor = [UIColor blueColor].CGColor;
+    self.connectionStatus.layer.borderWidth = 1.0;
+
 }
 
 - (void)didReceiveMemoryWarning

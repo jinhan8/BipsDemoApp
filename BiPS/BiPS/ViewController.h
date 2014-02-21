@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 RDV Labs LLC. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 #import "Photo.h"
 
