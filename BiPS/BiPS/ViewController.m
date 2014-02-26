@@ -65,6 +65,9 @@ NSMutableArray *photos;
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:bkgimage];
     //Design Titles
+    [[UILabel appearanceWhenContainedIn:[UITableViewCell class], nil]
+     setTextColor:[UIColor whiteColor]];
+    
 //    NSArray *titles = [NSArray arrayWithObjects:self.title, self.rearTitle, self.frontTitle, nil];
 //    for (UILabel *ttl in titles) {
 //        ttl.textColor = [UIColor whiteColor];
@@ -72,30 +75,42 @@ NSMutableArray *photos;
 //    }
     
     //Design Labels
-    NSArray *labels = [NSArray arrayWithObjects:self.rearPressure, self.frontPressure, self.availableDevices, self.connectionStatus, nil];
-    for (UILabel *lbs in labels) {
-        lbs.layer.borderColor = [UIColor blueColor].CGColor;
+    NSArray *labels1 = [NSArray arrayWithObjects:self.rearPressure, self.frontPressure, self.availableDevices, self.connectionStatus, nil];
+    NSArray *labels2 = [NSArray arrayWithObjects:self.availableDevices, self.connectionStatus, nil];
+    
+    for (UILabel *lbs in labels1) {
+        lbs.layer.borderColor = [UIColor whiteColor].CGColor;
         lbs.layer.borderWidth = 1.0;
-        lbs.layer.cornerRadius = 6;
+        lbs.layer.cornerRadius = 30;
         lbs.backgroundColor = [UIColor whiteColor];
+    }
+    for (UILabel *lbs in labels2) {
+        lbs.layer.borderColor = [UIColor whiteColor].CGColor;
+        lbs.layer.borderWidth = 1.0;
+        lbs.layer.cornerRadius = 5;
+        lbs.backgroundColor = [UIColor clearColor];
     }
     //Design Buttons
     NSArray *buttons = [NSArray arrayWithObjects:self.scanDevices, self.connectDevices, nil];
     for (UIButton *btn in buttons){
         // Set the button Text Color
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         
         // Set the button Background Color
-        [btn setBackgroundColor:[UIColor blueColor]];
+        [btn setBackgroundColor:[UIColor whiteColor]];
         
-        CAGradientLayer *btnGradient = [CAGradientLayer layer];
-        btnGradient.frame = btn.bounds;
-        btnGradient.colors = [NSArray arrayWithObjects:
-                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
-                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
-                              nil];
-        [btn.layer insertSublayer:btnGradient atIndex:0];
+        //Set the button text size
+        btn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14.0];
+        
+//        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+//        btnGradient.frame = btn.bounds;
+//        btnGradient.colors = [NSArray arrayWithObjects:
+//                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+//                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+//                              nil];
+//        [btn.layer insertSublayer:btnGradient atIndex:0];
+        
         // Round button corners
         CALayer *btnLayer = [btn layer];
         [btnLayer setMasksToBounds:YES];
