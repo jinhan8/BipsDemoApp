@@ -66,7 +66,7 @@ NSMutableArray *photos;
      [[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:17.0]];
     
     //Design segment control
-    
+    [[UISegmentedControl appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:13.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     //Design navigation bar
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"aluminum2.png"] forBarMetrics:UIBarMetricsDefault];
