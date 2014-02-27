@@ -65,6 +65,9 @@ NSMutableArray *photos;
      //Font for all buttons
      [[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:17.0]];
     
+    //Design segment control
+    
+    
     //Design navigation bar
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"aluminum2.png"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
