@@ -44,6 +44,7 @@ UISegmentedControl *segmentControl;
 
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{return UIStatusBarStyleLightContent;}
 
 - (IBAction)scanDevices:(id)sender {
 }
@@ -59,8 +60,14 @@ NSMutableArray *photos;
     UIImage *image = [UIImage imageNamed: @"bicycle.png"];
     [vehiclePhoto setImage:image];
     
+    //Font for all labels
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:17.0]];
+     //Font for all buttons
+     [[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:17.0]];
+    
     //Design navigation bar
-    [[UINavigationBar appearance] setBarTintColor:[UIColor grayColor]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"aluminum2.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
@@ -68,6 +75,19 @@ NSMutableArray *photos;
     [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
         shadow, NSShadowAttributeName,
     [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:16.0], NSFontAttributeName, nil]];
+    
+    //Design tool bar
+    [[UIToolbar appearance]setBarTintColor:[UIColor blackColor]];
+    // portrait
+    [[UIToolbar appearance]setBackgroundImage:[UIImage imageNamed:@"aluminum.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    
+    // landscape
+    [[UIToolbar appearance]setBackgroundImage:[UIImage imageNamed:@"YourToolbarBkg-Landscape.png"] forToolbarPosition:UIToolbarPositionAny barMetrics: UIBarMetricsLandscapePhone];
+    
+    NSShadow *toolShadow = [[NSShadow alloc]init];
+    toolShadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    toolShadow.shadowOffset = CGSizeMake(0, 1);
+    
     
     //Design Background
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -98,18 +118,20 @@ NSMutableArray *photos;
         lbs.layer.borderWidth = 1.0;
         lbs.layer.cornerRadius = 5;
         lbs.backgroundColor = [UIColor clearColor];
+        lbs.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:18];
     }
     for (UILabel *lbs in labels2) {
         lbs.layer.borderColor = [UIColor whiteColor].CGColor;
         lbs.layer.borderWidth = 1.0;
         lbs.layer.cornerRadius = 5;
         lbs.backgroundColor = [UIColor clearColor];
+        lbs.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:18];
     }
     //Design Buttons
     NSArray *buttons = [NSArray arrayWithObjects:self.connectDevices, nil];
     for (UIButton *btn in buttons){
         // Set the button Text Color
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         
         // Set the button Background Color
