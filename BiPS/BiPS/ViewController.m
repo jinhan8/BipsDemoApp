@@ -27,6 +27,7 @@
 
 @synthesize scanDevices, connectDevices;
 
+UISegmentedControl *segmentControl;
 
 - (IBAction)vehicleSwitch: (id)sender {
     
@@ -42,6 +43,8 @@
     }
 
 }
+
+
 - (IBAction)scanDevices:(id)sender {
 }
 - (IBAction)connectDevices:(id)sender {
@@ -56,7 +59,16 @@ NSMutableArray *photos;
     UIImage *image = [UIImage imageNamed: @"bicycle.png"];
     [vehiclePhoto setImage:image];
     
-   
+    //Design navigation bar
+    [[UINavigationBar appearance] setBarTintColor:[UIColor grayColor]];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+    [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+        shadow, NSShadowAttributeName,
+    [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:16.0], NSFontAttributeName, nil]];
+    
     //Design Background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
@@ -67,6 +79,9 @@ NSMutableArray *photos;
     //Design Titles
     [[UILabel appearanceWhenContainedIn:[UITableViewCell class], nil]
      setTextColor:[UIColor whiteColor]];
+    [[UILabel appearanceWhenContainedIn:[UITableViewCell class], nil]
+     setFont: [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:16.0]];
+   
     
 //    NSArray *titles = [NSArray arrayWithObjects:self.title, self.rearTitle, self.frontTitle, nil];
 //    for (UILabel *ttl in titles) {
@@ -81,8 +96,8 @@ NSMutableArray *photos;
     for (UILabel *lbs in labels1) {
         lbs.layer.borderColor = [UIColor whiteColor].CGColor;
         lbs.layer.borderWidth = 1.0;
-        lbs.layer.cornerRadius = 30;
-        lbs.backgroundColor = [UIColor whiteColor];
+        lbs.layer.cornerRadius = 5;
+        lbs.backgroundColor = [UIColor clearColor];
     }
     for (UILabel *lbs in labels2) {
         lbs.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -91,17 +106,18 @@ NSMutableArray *photos;
         lbs.backgroundColor = [UIColor clearColor];
     }
     //Design Buttons
-    NSArray *buttons = [NSArray arrayWithObjects:self.scanDevices, self.connectDevices, nil];
+    NSArray *buttons = [NSArray arrayWithObjects:self.connectDevices, nil];
     for (UIButton *btn in buttons){
         // Set the button Text Color
-        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         
         // Set the button Background Color
         [btn setBackgroundColor:[UIColor whiteColor]];
         
-        //Set the button text size
-        btn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14.0];
+        //Set the button text font and size
+        btn.titleLabel.font =
+        [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:14.0];
         
 //        CAGradientLayer *btnGradient = [CAGradientLayer layer];
 //        btnGradient.frame = btn.bounds;
@@ -117,7 +133,7 @@ NSMutableArray *photos;
         [btnLayer setCornerRadius:5.0f];
         // Apply a 1 pixel, black border
         [btnLayer setBorderWidth:1.0f];
-        [btnLayer setBorderColor:[[UIColor blackColor] CGColor]];
+        [btnLayer setBorderColor:[[UIColor whiteColor] CGColor]];
     }
     
 
